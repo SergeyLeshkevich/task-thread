@@ -1,0 +1,25 @@
+Configuration:
+  name: Default
+  Properties:
+    Property:
+      name: log-path
+      value: "src/main/resources/logs"
+  Appenders:
+    Console:
+      name: console
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%-5p [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %c{1} - %m%n"
+    File:
+      name: file
+      fileName: ${log-path}/application.log
+      PatternLayout:
+        pattern: "%-5p [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %c{1} - %m%n"
+  Loggers:
+    Logger:
+      - name: by.leshkevich
+        additivity: false
+        level: info
+        AppenderRef:
+          - ref: console
+          - ref: file
