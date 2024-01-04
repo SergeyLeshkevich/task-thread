@@ -52,13 +52,7 @@ public class Client {
     }
 
     public void addResponseToCheck(Response response) {
-        accumulator.addAndGet(response.getValue());
-    }
-
-    public boolean checkResponse(int sizeResponse) {
-        int actual = accumulator.get();
-        int expectedSum = (1 + sizeResponse) * (sizeResponse / 2);
-        return actual == expectedSum;
+        accumulator.addAndGet(response.value());
     }
 
     public void sendData() throws InterruptedException {

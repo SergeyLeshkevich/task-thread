@@ -48,24 +48,6 @@ class ClientTest {
     }
 
     @Test
-    void shouldReturnTrue() {
-        // given
-        int sizeListData = 100;
-        Client client = new Client(null, null);
-        Response response = new Response();
-        for (int i = 1; i <= sizeListData; i++) {
-            response.setValue(i);
-            client.addResponseToCheck(response);
-        }
-
-        // when
-        boolean actual = client.checkResponse(sizeListData);
-
-        // then
-        assertTrue(actual);
-    }
-
-    @Test
     void checkFindDataByIndex() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         // given
         List<Integer> dataList = new ArrayList<>();

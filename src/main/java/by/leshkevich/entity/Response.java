@@ -1,13 +1,5 @@
 package by.leshkevich.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+public record Response(int value) {
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Response {
-
-    private int value;
 }

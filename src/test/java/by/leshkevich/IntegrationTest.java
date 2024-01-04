@@ -29,12 +29,17 @@ class IntegrationTest {
         // when
         client.sendData();
         boolean actualCheckData = server.checkData(listToCheck);
-        boolean actualCheckResponse = client.checkResponse(sizeListData);
+        boolean actualCheckResponse = checkResponse(sizeListData, client.getAccumulator().get());
 
         // then
         assertAll(
-                ()->assertTrue(actualCheckData),
-                ()->assertTrue(actualCheckResponse)
+                () -> assertTrue(actualCheckData),
+                () -> assertTrue(actualCheckResponse)
         );
+    }
+
+    public boolean checkResponse(int sizeResponse, int accumulator) {
+        int expectedSum = (1 + sizeResponse) * (sizeResponse / 2);
+        return accumulator == expectedSum;
     }
 }

@@ -28,7 +28,7 @@ public class Server {
     public Response processRequest(Request request) throws InterruptedException {
         int processTime = new Random().nextInt(MAX_TIMEOUT) + MIN_TIMEOUT;
         Thread.sleep(processTime);
-        int value = request.getValue();
+        int value = request.value();
         dataList.add(value);
         finalRequest.add(value);
 
